@@ -25,8 +25,11 @@ _sexED (sexual education) es una aplicación móvil diseñada para brindar educa
 2. Instala las dependencias necesarias.
 3. Ejecuta la aplicación en tu dispositivo o emulador.
 
-## Equipo 📌
+## Contribución 🖇️
 
+_¡Estamos abiertos a recibir contribuciones! Si tienes alguna idea, mejora o corrección, no dudes en hacer una solicitud de extracción._
+
+## Equipo ✒️
 - Yanqui Vera
 - Henry Aron
 - Vilca Alvites Cecilia del Pilar
