@@ -7,6 +7,13 @@ _sexED (sexual education) es una aplicación móvil diseñada para brindar educa
 * Interacción con un chatbot para respuestas a preguntas comunes.
 * Comunidad activa para compartir experiencias y apoyo
 
+## Objetivos de la aplicación  📋
+* Facilitar el acceso a información actualizada y confiable sobre educación sexual.
+* Fomentar una actitud positiva y respetuosa hacia la sexualidad.
+* Proporcionar herramientas interactivas y recursos educativos.
+* Promover la prevención de embarazos no deseados.
+* Implementar un chatbot.
+
 ## Construido con 🛠️
 
 * [React Native](https://reactnative.dev/)
