@@ -5,7 +5,6 @@ _sexED (sexual education) es una aplicación móvil diseñada para brindar educa
 ## Características de la aplicación  📋
 * Acceso a contenido educativo sobre temas de educación sexual.
 * Interacción con un chatbot para respuestas a preguntas comunes.
-* Comunidad activa para compartir experiencias y apoyo
 
 ## Objetivos de la aplicación  📋
 * Facilitar el acceso a información actualizada y confiable sobre educación sexual.
@@ -13,6 +12,18 @@ _sexED (sexual education) es una aplicación móvil diseñada para brindar educa
 * Proporcionar herramientas interactivas y recursos educativos.
 * Promover la prevención de embarazos no deseados.
 * Implementar un chatbot.
+
+## Mockups  📋
+
+![Mockup 1](img/inicio.png)
+
+![Mockup 2](img/informacion.png)
+
+![Mockup 3](img/chatbot.png)
+
+## Documentación 📋
+
+Encontrarás documentación detallada sobre la especificacion de requisitos en [página de documentación](docs/is3_doc_req.pdf).
 
 ## Construido con 🛠️
 
@@ -30,8 +41,7 @@ _sexED (sexual education) es una aplicación móvil diseñada para brindar educa
 _¡Estamos abiertos a recibir contribuciones! Si tienes alguna idea, mejora o corrección, no dudes en hacer una solicitud de extracción._
 
 ## Equipo ✒️
-- Yanqui Vera
-- Henry Aron
+- [Yanqui Vera Henry Aron](https://github.com/hyanquiv)
 - Vilca Alvites Cecilia del Pilar
 - Bejar Merma Angel Andres
 - Torres Quispe Erick Jesus
