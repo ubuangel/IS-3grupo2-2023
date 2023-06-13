@@ -23,7 +23,9 @@ _sexED (sexual education) es una aplicación móvil diseñada para brindar educa
 
 ## Documentación 📋
 
-Encontrarás documentación detallada sobre la especificacion de requisitos en [página de documentación](docs/is3_doc_req.pdf).
+Encontrarás documentación detallada sobre la especificacion de requisitos en [Requisitos](docs/is3_doc_req.pdf).
+
+Adicionalmente aqui se encuentra el espacio de trabajo creado en Trello [Tablero](https://trello.com/b/EqBpKCVb/educaci%C3%B2n-sexual)
 
 ## Construido con 🛠️
 
