@@ -21,6 +21,9 @@ _sexED (sexual education) es una aplicación móvil diseñada para brindar educa
 
 ![Mockup 3](img/chatbot.png)
 
+## Diagrama UML
+![BD](img/BD.jpeg)
+
 ## Documentación 📋
 
 Encontrarás documentación detallada sobre la especificacion de requisitos en [Requisitos](docs/is3_doc_req.pdf).
