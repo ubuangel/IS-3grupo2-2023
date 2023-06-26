@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AndroidAppSexed</string>
+
+    <string name="splash_screen_info">"© 2023 "</string>
+    <string name="progressdialog_title">Porfavor Espere...</string>
+    <string name="progressdialog_message">Cargando...</string>
+    <string name="add_as_favorite">Agregar</string>
+    <string name="drawer_menu_favorites">Favoritos</string>
+    <string name="open_drawer">Abrir Navegador drawer</string>
+    <string name="close_drawer">Cerrar Navegador drawer</string>
+
+</resources>
