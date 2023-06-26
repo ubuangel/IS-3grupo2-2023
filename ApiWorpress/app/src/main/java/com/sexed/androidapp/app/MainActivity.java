@@ -15,7 +15,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-//import com.sexed.androidapp.R;
 import com.foysaltech.wptoandroidapp.R;
 import com.sexed.androidapp.adapter.PostAdapter;
 import com.sexed.androidapp.model.Post;
@@ -123,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
         } else {
-            Snackbar.make(swipeRefreshLayout, "No puede conectarse a Internet", Snackbar.LENGTH_INDEFINITE).show();
+            Snackbar.make(swipeRefreshLayout, "No se puede conectar a internet", Snackbar.LENGTH_INDEFINITE).show();
         }
     }
 
@@ -133,7 +132,10 @@ public class MainActivity extends AppCompatActivity implements
         int id = item.getItemId();
 
         switch (id) {
-
+            case R.id.my_favorites:
+                Intent intent = new Intent(getApplicationContext(), FavoritePostsActivity.class);
+                startActivity(intent);
+                break;
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

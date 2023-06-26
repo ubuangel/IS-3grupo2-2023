@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.foysaltech.wptoandroidapp.R;
-//import com.sexed.androidapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 

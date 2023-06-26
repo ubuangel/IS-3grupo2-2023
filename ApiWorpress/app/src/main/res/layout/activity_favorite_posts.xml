@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/favPosts">
-
+    android:id="@+id/favPosts"
+    tools:context="com.sexed.androidapp.app.FavoritePostsActivity">
 
     <androidx.appcompat.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"

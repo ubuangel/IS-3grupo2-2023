@@ -10,7 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
@@ -22,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-//import com.sexed.androidapp.R;
 import com.foysaltech.wptoandroidapp.R;
 import com.sexed.androidapp.model.Media;
 //import com.foysaltech.wptoandroidapp.sqlite.PostDB;
@@ -108,7 +106,7 @@ public class PostActivity extends AppCompatActivity {
             });
 
         }else{
-            Snackbar.make(parentView, "No se puede conectar internet", Snackbar.LENGTH_INDEFINITE).show();
+            Snackbar.make(parentView, "No se puede conectar a internet", Snackbar.LENGTH_INDEFINITE).show();
         }
     }
 
@@ -121,7 +119,6 @@ public class PostActivity extends AppCompatActivity {
         postContent = findViewById(R.id.webview);
 
     }
-
 
 
 
@@ -159,14 +156,7 @@ public class PostActivity extends AppCompatActivity {
         initCollapsingToolbar(title);
 
 
-       // isItemSelected = PostDB.getInstance(getApplicationContext()).getDbPostIsFav(id);
-        if(isItemSelected){
-            Log.d("SelectedItem", " "+ isItemSelected);
 
-
-        }else {
-            Log.d("SelectedItem", " " + isItemSelected);
-        }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

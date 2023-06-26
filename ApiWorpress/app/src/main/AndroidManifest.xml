@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WpToAndroidApp">
         <activity
-            android:name=".app.SplashActivity"
+            android:name="com.sexed.androidapp.app.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -24,9 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.MainActivity" />
-        <activity android:name=".app.PostActivity" />
-        <activity android:name=".app.FavoritePostsActivity" />
+        <activity android:name="com.sexed.androidapp.app.MainActivity" />
+        <activity android:name="com.sexed.androidapp.app.PostActivity" />
+        <activity android:name="com.sexed.androidapp.app.FavoritePostsActivity" />
     </application>
 
 </manifest>

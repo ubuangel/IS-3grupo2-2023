@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 import com.foysaltech.wptoandroidapp.R;
-//import com.sexed.androidapp.R;
 import com.sexed.androidapp.app.PostActivity;
 import com.sexed.androidapp.model.Post;
+
 import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter {
