@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <include layout="@layout/activity_main_toolbar"/>
 
@@ -9,8 +11,6 @@
 <androidx.drawerlayout.widget.DrawerLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_marginTop="?attr/actionBarSize"
     android:fitsSystemWindows="false"
@@ -27,8 +27,12 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="false"
 
-        app:menu="@menu/drawer_navigation_menu"/>
+        app:menu="@menu/drawer_navigation_menu">
+
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
+
 
 </RelativeLayout>

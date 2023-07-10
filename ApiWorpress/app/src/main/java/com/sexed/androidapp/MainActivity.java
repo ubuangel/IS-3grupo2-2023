@@ -1,11 +1,13 @@
-package com.sexed.androidapp.app;
+package com.sexed.androidapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Handler;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,13 +17,19 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.foysaltech.wptoandroidapp.R;
-import com.sexed.androidapp.adapter.PostAdapter;
-import com.sexed.androidapp.model.Post;
-import com.sexed.androidapp.util.InternetConnection;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.sexed.androidapp.adapter.PostAdapter;
+import com.sexed.androidapp.app.ApiService;
+import com.sexed.androidapp.app.WordPressClient;
+import com.sexed.androidapp.model.Post;
+import com.sexed.androidapp.util.InternetConnection;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -54,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 
+
+
+
+
             @Override
             public void onRefresh() {
                 swipeRefreshLayout.setRefreshing(true);
@@ -75,6 +87,59 @@ public class MainActivity extends AppCompatActivity implements
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
         setListContent(true);
+
+
+
+        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view){
+                Intent miintent=new Intent(MainActivity.this,MainActivityBot.class);
+                startActivity(miintent);
+
+
+            }
+
+
+        });
+
+
+        //desde aca
+
+        //setContentView(R.layout.activity_main); //ojito con este si no comento muestra vista en blanco
+
+
+
+
+        //hsat aca
+
+
+
+
+    /* protected void nuevaf () {
+
+        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view){
+                Intent miintent=new Intent(MainActivity.this,MainActivityBot.class);
+                startActivity(miintent);
+
+
+
+
+            }
+
+
+        });
+
+
+    }
+
+    */
+
 
     }
 
@@ -126,17 +191,19 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
-    @Override
+
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         int id = item.getItemId();
 
-   ;
+
+
 
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
 
 }

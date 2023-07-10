@@ -7,7 +7,13 @@
     android:background="@color/colorPrimary"
     tools:context="com.sexed.androidapp.app.SplashActivity">
 
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="290dp"
+        android:layout_height="261dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/personas"
+        />
 
     <TextView
         android:id="@+id/textView"
