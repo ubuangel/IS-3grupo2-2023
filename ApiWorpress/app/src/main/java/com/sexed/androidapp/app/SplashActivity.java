@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.foysaltech.wptoandroidapp.R;
+import com.sexed.androidapp.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

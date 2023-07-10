@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.sexed.androidapp.app.MainActivity">
+    tools:context="com.sexed.androidapp.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/postRecycler"
@@ -18,4 +20,21 @@
         android:scrollbars="vertical" />
 
 
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        android:id="@+id/fab"
+        android:layout_width="69dp"
+        android:layout_height="53dp"
+
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="49dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/stat_notify_chat">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton> -->
+
+
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+

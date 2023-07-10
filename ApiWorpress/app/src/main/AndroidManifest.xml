@@ -4,8 +4,8 @@
     package="com.foysaltech.wptoandroidapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+ <!--   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> -->
 
     <application
         android:allowBackup="true"
@@ -13,20 +13,39 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.WpToAndroidApp">
+        android:theme="@style/Theme.WpToAndroidApp"
+
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+
+        tools:targetApi="31">
         <activity
             android:name="com.sexed.androidapp.app.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name="com.sexed.androidapp.app.MainActivity" />
+
+       <activity android:name="com.sexed.androidapp.MainActivity" />
         <activity android:name="com.sexed.androidapp.app.PostActivity" />
-        <activity android:name="com.sexed.androidapp.app.FavoritePostsActivity" />
+      <!--  <activity android:name="com.sexed.androidapp.app.FavoritePostsActivity" />-->
+
+        <!--   /> -->
+        <activity
+            android:name="com.sexed.androidapp.MainActivityBot"
+            android:exported="false" />
+        <!--    <activity
+                android:name="com.sexed.androidapp.MainActivity"
+                android:exported="true">  -->
+        <!--    /> -->
+
     </application>
 
 </manifest>

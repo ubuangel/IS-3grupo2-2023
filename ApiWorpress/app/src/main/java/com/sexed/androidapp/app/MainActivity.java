@@ -131,12 +131,8 @@ public class MainActivity extends AppCompatActivity implements
 
         int id = item.getItemId();
 
-        switch (id) {
-            case R.id.my_favorites:
-                Intent intent = new Intent(getApplicationContext(), FavoritePostsActivity.class);
-                startActivity(intent);
-                break;
-        }
+   ;
+
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
