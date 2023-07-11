@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements
         toggle.syncState();
         setListContent(true);
 
-
+/*
 
         FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements
 
         });
 
-
+*/
         //desde aca
 
         //setContentView(R.layout.activity_main); //ojito con este si no comento muestra vista en blanco
