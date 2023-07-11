@@ -50,7 +50,7 @@ _¡Estamos abiertos a recibir contribuciones! Si tienes alguna idea, mejora o co
 ## Equipo ✒️
 - [Yanqui Vera Henry Aron](https://github.com/hyanquiv)
 - Vilca Alvites Cecilia del Pilar
-- Bejar Merma Angel Andres
+- [Bejar Merma Angel Andres](https://github.com/ubuangel)
 - Torres Quispe Erick Jesus
 - Rimache Choquehuanca Sennayda
 - Bustamante Torres Luis Angel
