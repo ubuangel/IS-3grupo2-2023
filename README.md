@@ -33,7 +33,7 @@ Encontrarás documentación detallada sobre la especificacion de requisitos en [
 Adicionalmente aqui se encuentra el espacio de trabajo creado en Trello [Tablero](https://trello.com/b/EqBpKCVb/educaci%C3%B2n-sexual)
 
 ## Construido con 🛠️
-*[DialogFlow](https://cloud.google.com/)
+* [DialogFlow](https://cloud.google.com/)
 * [Rest Api Word Press](https://wordpress.com)
 * [Java](https://www.java.com/)
 
