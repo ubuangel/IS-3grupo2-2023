@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
         setListContent(true);
-
+//
 /*
 
         FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
