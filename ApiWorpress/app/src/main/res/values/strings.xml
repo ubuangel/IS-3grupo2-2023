@@ -8,5 +8,17 @@
     <string name="drawer_menu_favorites">Favoritos</string>
     <string name="open_drawer">Abrir Navegador drawer</string>
     <string name="close_drawer">Cerrar Navegador drawer</string>
+    <string name="nuevo_usuario">Nuevo usuario?</string>
+    <string name="crear_una_cuenta">Crear una cuenta</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="prompt_email">Email</string>
+    <string name="Nombre">Name</string>
+    <string name="Apellido">Name</string>
+    <string name="apellido">Apellido</string>
+    <string name="nombre">Nombre</string>
+    <string name="enviar">Enviar</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="salir">Salir</string>
 
 </resources>

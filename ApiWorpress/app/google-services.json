@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "368102297102",
+    "project_id": "is3app",
+    "storage_bucket": "is3app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368102297102:android:4e5d5ea57b0fff3777b65f",
+        "android_client_info": {
+          "package_name": "com.foysaltech.wptoandroidapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368102297102-6f2ot8fivbse2c6eteegfv1p20r1uqdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAFXk_PtY8qMY9V9sN0nxCJvC6bjvmqRc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368102297102-6f2ot8fivbse2c6eteegfv1p20r1uqdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

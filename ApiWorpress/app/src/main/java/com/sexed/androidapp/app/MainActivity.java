@@ -1,42 +1,27 @@
-package com.sexed.androidapp;
-
-import static com.foysaltech.wptoandroidapp.R.*;
+package com.sexed.androidapp.app;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import com.foysaltech.wptoandroidapp.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.sexed.androidapp.adapter.PostAdapter;
-import com.sexed.androidapp.app.ApiService;
-import com.sexed.androidapp.app.WordPressClient;
 import com.sexed.androidapp.model.Post;
 import com.sexed.androidapp.util.InternetConnection;
-
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -52,41 +37,22 @@ public class MainActivity extends AppCompatActivity implements
     private SwipeRefreshLayout swipeRefreshLayout;
     private List<Post> postItemList;
 
-    FirebaseAuth auth;
-    FirebaseUser user;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.navigation_drawer);
+        setContentView(R.layout.navigation_drawer);
 
-        toolbar = findViewById(id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        drawerLayout = findViewById(id.drawer_layout);
-        navigationView = findViewById(id.navigation_view);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.navigation_view);
 
-        postList = findViewById(id.postRecycler);
-        swipeRefreshLayout = findViewById(id.parentLayout);
-
-        auth=FirebaseAuth.getInstance();
-        user=auth.getCurrentUser();
-
-        if (user==null){
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(intent);
-            finish();
-        }
-        /* //TEST
-        else {
-            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-            startActivity(intent);
-            finish();
-        }*/
+        postList = findViewById(R.id.postRecycler);
+        swipeRefreshLayout = findViewById(R.id.parentLayout);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-
 
             @Override
             public void onRefresh() {
@@ -105,63 +71,10 @@ public class MainActivity extends AppCompatActivity implements
         navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
-                drawerLayout, toolbar, string.open_drawer, string.close_drawer);
-        drawerLayout.addDrawerListener(toggle);
+                drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
+        drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
         setListContent(true);
-
-
-        /*
-        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view){
-                Intent miintent=new Intent(MainActivity.this,MainActivityBot.class);
-                startActivity(miintent);
-
-
-            }
-
-
-        });
-*/
-
-        //desde aca
-
-        //setContentView(R.layout.activity_main); //ojito con este si no comento muestra vista en blanco
-
-
-
-
-        //hsat aca
-
-
-
-
-    /* protected void nuevaf () {
-
-        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view){
-                Intent miintent=new Intent(MainActivity.this,MainActivityBot.class);
-                startActivity(miintent);
-
-
-
-
-            }
-
-
-        });
-
-
-    }
-
-    */
-
 
     }
 
@@ -175,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements
 
             final ProgressDialog progressDialog;
             progressDialog = new ProgressDialog(MainActivity.this);
-            progressDialog.setTitle(getString(string.progressdialog_title));
-            progressDialog.setMessage(getString(string.progressdialog_message));
+            progressDialog.setTitle(getString(R.string.progressdialog_title));
+            progressDialog.setMessage(getString(R.string.progressdialog_message));
 
             if(withProgress) {
                 progressDialog.show();
@@ -214,36 +127,16 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.log_out) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-
-    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         int id = item.getItemId();
 
-        if (id == R.id.log_out) {
-            Toast.makeText(getApplicationContext(), "Out test", Toast.LENGTH_SHORT).show();
-            FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(intent);
-            finish();
-        }
+   ;
+
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
 }
