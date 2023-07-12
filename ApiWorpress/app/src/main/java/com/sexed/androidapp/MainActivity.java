@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
 
-        FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
+      /*  FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity implements
 
 
         });
+
+*/
 
 
         //desde aca
