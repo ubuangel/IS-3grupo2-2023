@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements
         setListContent(true);
 
 
-        /*
+
         FloatingActionButton fab=(FloatingActionButton)findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){
 
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
         });
-*/
+
 
         //desde aca
 
