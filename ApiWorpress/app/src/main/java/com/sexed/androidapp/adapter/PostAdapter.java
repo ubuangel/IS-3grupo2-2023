@@ -99,10 +99,9 @@ public class PostAdapter extends RecyclerView.Adapter {
             content = contentFilter(content, "<ins", "</ins>");
             content = videoFilter(content, "<iframe", "/iframe>");
 
-            Intent intent = PostActivity.createIntent(v.getContext(), currentPost.getId(),
-                    currentPost.getFeatured_media(), Html.fromHtml(title,
-                            Html.FROM_HTML_MODE_LEGACY).toString(), excerpt, content);
-            v.getContext().startActivity(intent);*/
+            */
+            Intent intent = PostActivity.createIntent(v.getContext(), currentPost.getUrl(), currentPost.getTitle(), currentPost.getImage());
+            v.getContext().startActivity(intent);
         }
 
         public String contentFilter(String content, String first, String last) {

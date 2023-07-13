@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WordPressClient {
 
-    private static final String BASE_URL = "https://demo5430267.mockable.io/";
+    private static final String BASE_URL = "https://demo2395178.mockable.io/";
     public static Retrofit getRetroInstance(){
 
         Retrofit retrofit = new Retrofit.Builder()

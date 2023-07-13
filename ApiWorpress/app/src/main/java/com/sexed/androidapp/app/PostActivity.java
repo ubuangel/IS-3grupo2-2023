@@ -42,15 +42,12 @@ public class PostActivity extends AppCompatActivity {
     boolean isItemSelected;
 
 
-    public static Intent createIntent(Context context, int id, int featuredMedia, String title,
-                                      String excerpt, String content){
+    public static Intent createIntent(Context context, String url, String title, String urlImage ){
         Intent intent = new Intent(context, PostActivity.class);
         //Setzen des wertes aus dem Intent
-        intent.putExtra("postId", id);
-        intent.putExtra("featuredMedia",featuredMedia);
-        intent.putExtra("postExcerpt", excerpt);
-        intent.putExtra("postTitle", title);
-        intent.putExtra("postContent",content);
+        intent.putExtra("url", url);
+        intent.putExtra("title", title);
+        intent.putExtra("urlImage", urlImage);
         return intent;
     }
 
@@ -60,19 +57,16 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        //Get Intent
-        int id = (int) getIntent().getSerializableExtra("postId");
-        int featuredMedia = (int) getIntent().getSerializableExtra("featuredMedia");
-        String title =  getIntent().getSerializableExtra("postTitle").toString();
-        String content = getIntent().getSerializableExtra("postContent").toString().replaceAll("\\\\n", "<br>").replaceAll("\\\\r", "").replaceAll("\\\\", "");;
 
+        String url =  getIntent().getSerializableExtra("url").toString();
+        String title =  getIntent().getSerializableExtra("title").toString();
+        String urlImage =  getIntent().getSerializableExtra("urlImage").toString();
 
-        initToolbar(title, id);
         initPost(title);
-        initWebView(content);
+        initWebView(url, urlImage);
 
 
-
+/*
         //Call Media
         if(InternetConnection.checkInternetConnection(getApplicationContext())) {
             ApiService api = WordPressClient.getApiService();
@@ -107,7 +101,7 @@ public class PostActivity extends AppCompatActivity {
 
         }else{
             Snackbar.make(parentView, "No se puede conectar a internet", Snackbar.LENGTH_INDEFINITE).show();
-        }
+        }*/
     }
 
     //Init Toolbar but do not set media
@@ -178,21 +172,22 @@ public class PostActivity extends AppCompatActivity {
 
 
     @SuppressLint("SetJavaScriptEnabled")
-    private void initWebView(String content){
+    private void initWebView(String url, String urlImage){
         final ProgressDialog progressDialog;
         progressDialog = new ProgressDialog(PostActivity.this);
         progressDialog.setTitle(getString(R.string.progressdialog_title));
         progressDialog.setMessage(getString(R.string.progressdialog_message));
 
-        //Set Html content
-        content = "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" +
-                "<script src=\"prism.js\"></script>" +
-                "<div class=\"content\">" + content+ "</div>";
 
 
-        Log.d("WebViewContent", content);
+        postContent.loadUrl(url);
 
-        postContent.getSettings().setLoadsImagesAutomatically(true);
+        Glide
+                .with(getApplicationContext())
+                .load(urlImage)
+                .into(postBackdrop);
+
+        /*postContent.getSettings().setLoadsImagesAutomatically(true);
         postContent.getSettings().setJavaScriptEnabled(true);
         postContent.setWebViewClient(new WebViewClient(){
             @Override
@@ -209,7 +204,7 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        postContent.loadDataWithBaseURL("file:///android_asset/*",content, "text/html; charset=utf-8", "UTF-8", null);
+        postContent.loadDataWithBaseURL("file:///android_asset/*",content, "text/html; charset=utf-8", "UTF-8", null);*/
     }
 
 
