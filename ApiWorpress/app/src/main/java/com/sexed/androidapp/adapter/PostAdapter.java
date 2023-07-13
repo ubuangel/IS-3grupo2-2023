@@ -7,11 +7,15 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.foysaltech.wptoandroidapp.R;
 import com.sexed.androidapp.app.PostActivity;
+import com.sexed.androidapp.model.Blog;
 import com.sexed.androidapp.model.Post;
 
 import java.util.List;
@@ -20,11 +24,11 @@ public class PostAdapter extends RecyclerView.Adapter {
 
 
     private Context context;
-    private List<Post> posts;
+    private List<Blog> posts;
 
 
     //Constructor
-    public PostAdapter(Context context, List<Post> posts) {
+    public PostAdapter(Context context, List<Blog> posts) {
         this.context = context;
         this.posts = posts;
     }
@@ -38,7 +42,7 @@ public class PostAdapter extends RecyclerView.Adapter {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        Post post = posts.get(position);
+        Blog post = posts.get(position);
         final PostViewHolder postHolder = (PostViewHolder) holder;
         postHolder.setCurrentPost(post);
 
@@ -54,26 +58,33 @@ public class PostAdapter extends RecyclerView.Adapter {
 
         private TextView cardPt;
         private TextView cardEx;
+        private TextView cardStar;
+        private ImageView cardImage;
 
-        private Post currentPost;
+        private Blog currentPost;
 
         public PostViewHolder(View itemView) {
             super(itemView);
 
             cardPt = itemView.findViewById(R.id.cardPt);
             cardEx = itemView.findViewById(R.id.cardEx);
-
+            cardStar = itemView.findViewById(R.id.cardStar);
+            cardImage = itemView.findViewById(R.id.imImagePost);
             itemView.setOnClickListener(this);
         }
 
         @RequiresApi(api = Build.VERSION_CODES.N)
-        public void setCurrentPost(Post post) {
+        public void setCurrentPost(Blog post) {
             currentPost = post;
-            String title = post.getTitle().get("rendered").toString().replaceAll("\"", "");
-            String excerpt = post.getExcerpt().get("rendered").toString().replaceAll("\"", "");
+            cardPt.setText(post.getTitle());
+            cardStar.setText(post.getRating()+"/5.0");
+            cardEx.setText(post.getDescription());
 
-            cardPt.setText(Html.fromHtml(title, Html.FROM_HTML_MODE_LEGACY));
-            cardEx.setText(Html.fromHtml(excerpt, Html.FROM_HTML_MODE_LEGACY));
+            Glide
+                    .with(this.itemView.getContext())
+                    .load(post.getImage())
+                    .into(cardImage);
+
         }
 
 
@@ -81,7 +92,7 @@ public class PostAdapter extends RecyclerView.Adapter {
         @Override
         public void onClick(View v) {
 
-            String title = currentPost.getTitle().get("rendered").toString().replaceAll("\"", "");
+            /*String title = currentPost.getTitle().get("rendered").toString().replaceAll("\"", "");
             String content = currentPost.getContent().get("rendered").toString().replaceAll("\"", "");
             String excerpt = currentPost.getExcerpt().get("rendered").toString().replaceAll("\"", "");
 
@@ -91,7 +102,7 @@ public class PostAdapter extends RecyclerView.Adapter {
             Intent intent = PostActivity.createIntent(v.getContext(), currentPost.getId(),
                     currentPost.getFeatured_media(), Html.fromHtml(title,
                             Html.FROM_HTML_MODE_LEGACY).toString(), excerpt, content);
-            v.getContext().startActivity(intent);
+            v.getContext().startActivity(intent);*/
         }
 
         public String contentFilter(String content, String first, String last) {

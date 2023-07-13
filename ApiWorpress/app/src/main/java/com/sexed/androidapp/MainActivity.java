@@ -32,7 +32,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.sexed.androidapp.adapter.PostAdapter;
 import com.sexed.androidapp.app.ApiService;
 import com.sexed.androidapp.app.WordPressClient;
-import com.sexed.androidapp.model.Post;
+import com.sexed.androidapp.model.Blog;
+import com.sexed.androidapp.model.Blog;
 import com.sexed.androidapp.util.InternetConnection;
 
 import java.util.List;
@@ -48,9 +49,9 @@ public class MainActivity extends AppCompatActivity implements
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    private RecyclerView postList;
+    private RecyclerView BlogList;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private List<Post> postItemList;
+    private List<Blog> BlogItemList;
 
     FirebaseAuth auth;
     FirebaseUser user;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements
         drawerLayout = findViewById(id.drawer_layout);
         navigationView = findViewById(id.navigation_view);
 
-        postList = findViewById(id.postRecycler);
+        BlogList = findViewById(id.postRecycler);
         swipeRefreshLayout = findViewById(id.parentLayout);
 
         auth=FirebaseAuth.getInstance();
@@ -171,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
             ApiService api = WordPressClient.getApiService();
-            Call<List<Post>> call = api.getPosts();
+            Call<List<Blog>> call = api.getPosts();
 
             final ProgressDialog progressDialog;
             progressDialog = new ProgressDialog(MainActivity.this);
@@ -182,14 +183,14 @@ public class MainActivity extends AppCompatActivity implements
                 progressDialog.show();
             }
 
-            call.enqueue(new Callback<List<Post>>() {
+            call.enqueue(new Callback<List<Blog>>() {
                 @Override
-                public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
+                public void onResponse(Call<List<Blog>> call, Response<List<Blog>> response) {
                     Log.d("RetrofitResponse", "Status Code " + response.code());
-                    postItemList = response.body();
-                    postList.setHasFixedSize(true);
-                    postList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                    postList.setAdapter(new PostAdapter(getApplicationContext(), postItemList));
+                    BlogItemList = response.body();
+                    BlogList.setHasFixedSize(true);
+                    BlogList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    BlogList.setAdapter(new PostAdapter(getApplicationContext(), BlogItemList));
 
                     if(withProgress) {
                         progressDialog.dismiss();
@@ -199,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements
                 }
 
                 @Override
-                public void onFailure(Call<List<Post>> call, Throwable t) {
+                public void onFailure(Call<List<Blog>> call, Throwable t) {
                     Log.d("RetrofitResponse", "Error");
                     if(withProgress) {
                         progressDialog.dismiss();

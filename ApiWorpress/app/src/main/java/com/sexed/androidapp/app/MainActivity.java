@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.foysaltech.wptoandroidapp.R;
 import com.sexed.androidapp.adapter.PostAdapter;
+import com.sexed.androidapp.model.Blog;
 import com.sexed.androidapp.model.Post;
 import com.sexed.androidapp.util.InternetConnection;
 import com.google.android.material.navigation.NavigationView;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements
     private NavigationView navigationView;
     private RecyclerView postList;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private List<Post> postItemList;
+    private List<Blog> postItemList;
 
 
     @Override
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
             ApiService api = WordPressClient.getApiService();
-            Call<List<Post>> call = api.getPosts();
+            Call<List<Blog>> call = api.getPosts();
 
             final ProgressDialog progressDialog;
             progressDialog = new ProgressDialog(MainActivity.this);
@@ -95,9 +96,9 @@ public class MainActivity extends AppCompatActivity implements
                 progressDialog.show();
             }
 
-            call.enqueue(new Callback<List<Post>>() {
+            call.enqueue(new Callback<List<Blog>>() {
                 @Override
-                public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
+                public void onResponse(Call<List<Blog>> call, Response<List<Blog>> response) {
                     Log.d("RetrofitResponse", "Status Code " + response.code());
                     postItemList = response.body();
                     postList.setHasFixedSize(true);
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements
                 }
 
                 @Override
-                public void onFailure(Call<List<Post>> call, Throwable t) {
+                public void onFailure(Call<List<Blog>> call, Throwable t) {
                     Log.d("RetrofitResponse", "Error");
                     if(withProgress) {
                         progressDialog.dismiss();

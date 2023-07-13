@@ -1,5 +1,6 @@
 package com.sexed.androidapp.app;
 
+import com.sexed.androidapp.model.Blog;
 import com.sexed.androidapp.model.Media;
 import com.sexed.androidapp.model.Post;
 import java.util.List;
@@ -9,8 +10,8 @@ import retrofit2.http.Path;
 
 public interface ApiService {
 
-    @GET("posts")
-    Call<List<Post>> getPosts();
+    @GET("blogs/list")
+    Call<List<Blog>> getPosts();
 
     @GET("posts/{id}")
     Call<Post> getPostById(@Path("id") int postId);
